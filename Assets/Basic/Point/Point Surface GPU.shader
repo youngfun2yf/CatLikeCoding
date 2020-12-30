@@ -1,4 +1,4 @@
-﻿Shader "Graph/Point Surface"
+﻿Shader "Graph/Point Surface GPU"
 {
     Properties
     {
@@ -7,11 +7,15 @@
     SubShader
     {
         CGPROGRAM
-        // Physically based Standard lighting model, and enable shadows on all light types
-        #pragma surface ConfigureSurface Standard fullforwardshadows
 
-        // Use shader model 3.0 target, to get nicer looking lighting
-        #pragma target 3.0
+        #pragma surface ConfigureSurface Standard fullforwardshadows addshadow
+        #pragma instancing_options assumeuniformscaling procedural:ConfigureProcedural
+        #pragma editor_sync_compilation
+
+
+        #pragma target 4.5
+
+        #include "PointGPU.hlsl"
 
         float _Smoothness;
 

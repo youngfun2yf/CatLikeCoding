@@ -28,7 +28,7 @@ public class Graph : MonoBehaviour
         var step = 2f / resolution;
         var scale = Vector3.one * step;
         _points = new Transform[resolution * resolution];
-        for (int i = 0, x = 0, z = 0; i < _points.Length; i++, x++)
+        for (int i = 0; i < _points.Length; i++)
         {
             var point = Instantiate(pointPrefab, transform, false);
             point.localScale = scale;
