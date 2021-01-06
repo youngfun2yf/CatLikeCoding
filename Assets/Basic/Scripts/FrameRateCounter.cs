@@ -47,4 +47,9 @@ public class FrameRateCounter : MonoBehaviour
             _worstDuration = 0f;
         }
     }
+
+    public void Copy()
+    {
+        GUIUtility.systemCopyBuffer = display.text;
+    }
 }
